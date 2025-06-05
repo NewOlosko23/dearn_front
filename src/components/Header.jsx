@@ -13,7 +13,9 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="text-2xl font-bold text-yellow-700">
-              Dearn Works
+              <Link to="/" className="hover:text-yellow-600">
+                Dearn Works
+              </Link>
             </div>
 
             {/* Desktop Nav */}
@@ -38,7 +40,7 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden md:block">
               <Link
-                to="/contact"
+                to="/quote"
                 className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition"
               >
                 Get a Quote
@@ -103,7 +105,7 @@ const Header = () => {
               Contact
             </Link>
             <Link
-              to="/contact"
+              to="/quote"
               className="block bg-yellow-600 text-white text-center py-2 rounded hover:bg-yellow-700"
             >
               Get a Quote
