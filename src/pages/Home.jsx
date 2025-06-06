@@ -1,11 +1,39 @@
 import { Link } from "react-router-dom";
 import Hero from "../assets/hero.jpg";
-import { FaTools, FaDraftingCompass, FaPaintBrush } from "react-icons/fa";
+import {
+  FaTools,
+  FaDraftingCompass,
+  FaPaintBrush,
+  FaRulerCombined,
+  FaPaintRoller,
+  FaHammer
+} from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
+  const landingServices = [
+    {
+      title: "Plastering & Finishing",
+      icon: <FaHammer className="text-primary w-8 h-8 mx-auto mb-3" />,
+      description:
+        "Expert plastering and smooth finishes that prepare your walls for painting or tiling.",
+    },
+    {
+      title: "Moulding Designs",
+      icon: <FaRulerCombined className="text-primary w-8 h-8 mx-auto mb-3" />,
+      description:
+        "Stylish and detailed ceiling and wall moulding designs that add elegance and luxury.",
+    },
+    {
+      title: "Interior Design Finishes",
+      icon: <FaPaintRoller className="text-primary w-8 h-8 mx-auto mb-3" />,
+      description:
+        "Final interior touch-ups transforming spaces into modern, refined environments.",
+    },
+  ];
+
   const testimonials = [
     {
       quote: `"Dearn Works delivered our home ahead of schedule and beyond expectations!"`,
@@ -150,90 +178,26 @@ const Home = () => {
           What We Offer
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Service 1: Residential Construction */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              {/* Replace with real image later */}
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
+          {landingServices.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center"
+            >
+              {service.icon}
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                {service.title}
+              </h3>
+              <p className="text-gray-600">{service.description}</p>
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Residential Construction
-            </h3>
-            <p className="text-gray-600">
-              We build homes that blend quality, beauty, and comfort — brick by
-              brick.
-            </p>
-          </div>
-
-          {/* Service 2: Commercial Projects */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Commercial Projects
-            </h3>
-            <p className="text-gray-600">
-              From offices to retail spaces, we deliver functional, modern
-              commercial builds on time and within budget.
-            </p>
-          </div>
-
-          {/* Service 3: Renovation & Remodeling */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Renovation & Remodeling
-            </h3>
-            <p className="text-gray-600">
-              Give your spaces new life with our seamless upgrades and stylish
-              transformations.
-            </p>
-          </div>
-
-          {/* Service 4: Plaster & Finishing */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Plaster & Finishing
-            </h3>
-            <p className="text-gray-600">
-              Expert plastering and smooth finishes that prepare your walls for
-              painting or tiling.
-            </p>
-          </div>
-
-          {/* Service 5: Tile & Flooring */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Tile & Flooring
-            </h3>
-            <p className="text-gray-600">
-              Stylish and durable tile installations and flooring solutions
-              tailored for your needs.
-            </p>
-          </div>
-
-          {/* Service 6: Interior Design */}
-          <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 text-center">
-            <div className="mb-4">
-              <div className="h-40 bg-gray-200 rounded-lg"></div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Interior Design
-            </h3>
-            <p className="text-gray-600">
-              Creative and functional interior designs to make every corner
-              shine.
-            </p>
-          </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link
+            to="/services"
+            className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+          >
+            See All Services
+          </Link>
         </div>
       </section>
 
