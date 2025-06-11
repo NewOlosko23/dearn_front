@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Hero from "../assets/hero.jpg";
+import Sample from "../assets/sample.jpg";
 import {
   FaTools,
   FaDraftingCompass,
@@ -154,7 +155,7 @@ const Home = () => {
               className="bg-white text-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
             >
               <img
-                src={`https://via.placeholder.com/400x250?text=Project+${i}`}
+                src={Sample}
                 alt={`Project ${i}`}
                 className="w-full h-56 object-cover"
               />
@@ -194,7 +195,7 @@ const Home = () => {
         <div className="mt-12 text-center">
           <Link
             to="/services"
-            className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+            className="inline-block px-6 py-3 bg-primary text-gray-700 rounded-full hover:bg-primary-dark transition"
           >
             See All Services
           </Link>
